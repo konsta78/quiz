@@ -7,7 +7,7 @@
 	<div class="c-content-box c-size-lg c-bg-grey-1">
 		<div class="container">
 			<div class="c-content-title-1">
-				<h3 class="c-center c-font-uppercase c-font-bold">Вопрос №1</h3>
+                <h3 class="c-center c-font-uppercase c-font-bold" id="numq">Вопрос №1</h3>
 				<h3 class="c-center">Кто был первым начальником строительства метро в Ленинграде?</h3>
 			</div><!-- Вопрос -->
 				<div class="col-md-6">
@@ -16,16 +16,17 @@
 							<div class="panel">
 								<div class="panel-heading" role="tab" id="headingTwo">
 									<h4 class="panel-title">
-									<a class="collapsed c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									<a class="collapsed c-font-bold c-font-19"  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"  data-toggle="modal" data-target="#myModal">
 										Ответ №1</a>
 									</h4>
+
 								</div>
 
 							</div><!-- 1 -->
 							<div class="panel">
 								<div class="panel-heading" role="tab" id="headingThree">
 									<h4 class="panel-title">
-									<a class="collapsed c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									<a class="collapsed c-font-bold c-font-19"  href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" data-toggle="modal" data-target="#myModal">
 										Ответ №2</a>
 									</h4>
 								</div>
@@ -60,10 +61,35 @@
 				</div>
 			</div>
 
+            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content c-square">
+                        <div class="modal-header">
+
+                            <h4 class="modal-title" id="myModalLabel">Верно/Неверно</h4>
+                        </div>
+                        <div class="modal-body c-font-bold">
+                            <p>
+                                Здесь ответ на вопрос
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal"
+                            onclick="numq.innerText = 'Теперь вопрос №2'">Далее</button><!-- здесь замена номера вопроса-->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 		</div>
 	</div>
 
 </div>
 
+
+
 {% endblock %}
+
