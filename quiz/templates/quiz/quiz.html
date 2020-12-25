@@ -7,8 +7,8 @@
 	<div class="c-content-box c-size-lg c-bg-grey-1">
 		<div class="container">
 			<div class="c-content-title-1">
-                <h3 class="c-center c-font-uppercase c-font-bold" id="numq">Вопрос №1</h3>
-				<h3 class="c-center">Кто был первым начальником строительства метро в Ленинграде?</h3>
+                <h3 class="c-center c-font-uppercase c-font-bold" id="q_num">Вопрос №1</h3>
+				<h3 class="c-center" id="q_text">Кто был первым начальником строительства метро в Ленинграде?</h3>
 			</div><!-- Вопрос -->
 				<div class="col-md-6">
 					<div class="c-content-accordion-1 c-theme">
@@ -75,7 +75,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn c-theme-btn c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase" data-dismiss="modal"
-                            onclick="numq.innerText = 'Теперь вопрос №2'">Далее</button><!-- здесь замена номера вопроса-->
+                            onclick="changeText2()">Далее</button><!-- здесь замена номера вопроса-->
                         </div>
                     </div>
 
@@ -89,7 +89,13 @@
 
 </div>
 
-
+<script>
+	function changeText2(){
+ 	document.getElementById('q_num').innerHTML = 'Теперь вопрос №2';
+ 	document.getElementById('q_text').innerHTML =
+ 		'Кто из руководителей Ленметростроя продолжил карьеру начальником Ленинградского метрополитена?';
+}
+</script>
 
 {% endblock %}
 
