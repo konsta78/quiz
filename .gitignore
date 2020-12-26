@@ -6,7 +6,7 @@ __pycache__/
 *.zip
 *.json
 *.sqlite3
-
+*.env
 
 # C extensions
 *.so
