@@ -17,6 +17,7 @@ class Question(models.Model):
     ans4 = models.TextField(max_length=20, verbose_name="Вариант № 4")
     r_ans = models.IntegerField(choices=ANSWERS, verbose_name="Правильный ответ")
 
+
     def __str__(self):
         return "Вопрос № " + str(self.number)
 

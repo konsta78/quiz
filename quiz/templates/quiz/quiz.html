@@ -94,9 +94,19 @@
 <script>
 
 	function changeText2(){
- 	document.getElementById('q_num').innerHTML = 'Теперь вопрос №2';
- 	document.getElementById('q_text').innerHTML =
- 		'Кто из руководителей Ленметростроя продолжил карьеру начальником Ленинградского метрополитена?';
+ 	//document.getElementById('q_num').innerHTML = 'Теперь вопрос №2';
+ 	//document.getElementById('q_text').innerHTML =
+ 	//	'Кто из руководителей Ленметростроя продолжил карьеру начальником Ленинградского метрополитена?';
+
+ 	// HTTP request to server
+		const Http = new XMLHttpRequest();
+		const url='/quiz?question_number=1';
+		Http.open("GET", url);
+		Http.send();
+
+		Http.onreadystatechange = (e) => {
+			console.log(Http.responseText)
+		}
 }
 </script>
 

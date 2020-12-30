@@ -15,4 +15,14 @@ class IndexView(View):
 
 class QuizView(View):
     def get(self, request):
-        return render(request, 'quiz/quiz.html', set_context(4))
+
+        question_number = request.GET.get("question_number")
+        print("===> ", question_number)
+
+        if not question_number:
+            question_number = 4
+        else:
+            question_number = int(question_number)
+
+        #return render(request, 'quiz/quiz.html', set_context(4))
+        return render(request, 'quiz/quiz.html', set_context(question_number))
