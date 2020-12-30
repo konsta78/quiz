@@ -3,12 +3,14 @@
 
 {% block content %}
 
+
+
 <div class="c-layout-page">
 	<div class="c-content-box c-size-lg c-bg-grey-1">
 		<div class="container">
 			<div class="c-content-title-1">
-                <h3 class="c-center c-font-uppercase c-font-bold" id="q_num">Вопрос №1</h3>
-				<h3 class="c-center" id="q_text">Кто был первым начальником строительства метро в Ленинграде?</h3>
+                <h3 class="c-center c-font-uppercase c-font-bold" id="q_num">Вопрос №{{ question.number }}</h3>
+				<h3 class="c-center" id="q_text">{{ question.title }}</h3>
 			</div><!-- Вопрос -->
 				<div class="col-md-6">
 					<div class="c-content-accordion-1 c-theme">
@@ -17,7 +19,7 @@
 								<div class="panel-heading" role="tab" id="headingTwo">
 									<h4 class="panel-title">
 									<a class="collapsed c-font-bold c-font-19"  href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"  data-toggle="modal" data-target="#myModal">
-										Ответ №1</a>
+										{{ question.ans1 }}</a>
 									</h4>
 
 								</div>
@@ -27,7 +29,7 @@
 								<div class="panel-heading" role="tab" id="headingThree">
 									<h4 class="panel-title">
 									<a class="collapsed c-font-bold c-font-19"  href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" data-toggle="modal" data-target="#myModal">
-										Ответ №2</a>
+										{{ question.ans2 }}</a>
 									</h4>
 								</div>
 
@@ -42,7 +44,7 @@
 								<div class="panel-heading" role="tab" id="headingTwo-1">
 									<h4 class="panel-title">
 									<a class="collapsed c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion-2" href="#collapseTwo-1" aria-expanded="false" aria-controls="collapseTwo">
-									Ответ №3</a>
+									{{ question.ans3 }}</a>
 									</h4>
 								</div>
 
@@ -51,7 +53,7 @@
 								<div class="panel-heading" role="tab" id="headingThree-1">
 									<h4 class="panel-title">
 									<a class="collapsed c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion-2" href="#collapseThree-1" aria-expanded="false" aria-controls="collapseThree">
-									Ответ №4</a>
+									{{ question.ans4 }}</a>
 									</h4>
 								</div>
 
@@ -90,6 +92,7 @@
 </div>
 
 <script>
+
 	function changeText2(){
  	document.getElementById('q_num').innerHTML = 'Теперь вопрос №2';
  	document.getElementById('q_text').innerHTML =
