@@ -3,11 +3,12 @@ from django.views import View
 from .models import Question
 from django.http import HttpResponse
 
+num_of_questions = {'all_questions': len(Question.objects.all())}
+
 
 def set_context(number=1):
-    context = {'question': Question.objects.get(pk=number)}
-    # context = {'question': Question.objects.all()}
-    return context
+    return {'question': Question.objects.get(pk=number)}
+
 
 class IndexView(View):
     def get(self, request):
@@ -22,6 +23,9 @@ class QuizView(View):
             num = 1
         else:
             num = int(num) + 1
+            if num > num_of_questions["all_questions"]:
+                return render(request, 'quiz/index.html')
+
         return render(request, 'quiz/quiz.html', set_context(num))
 
 
