@@ -15,4 +15,4 @@ class IndexView(View):
 
 class QuizView(View):
     def get(self, request):
-        return render(request, 'quiz/quiz.html', set_context(4))
+        return render(request, 'quiz/quiz.html', set_context(1))
