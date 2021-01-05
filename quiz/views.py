@@ -1,24 +1,32 @@
 from django.shortcuts import render
 from django.views import View
 from .models import Question
-from django.http import HttpResponse
 
-num_of_questions = {'all_questions': len(Question.objects.all())}
+# кол-во вопросов
+num_of_questions = {'all_questions': len(Question.objects.all()) - 1}
 
 
-def set_context(number=1):
+def set_context(number):
+    """
+    Выбор вопроса по ключю (primary key)
+    """
     return {'question': Question.objects.get(pk=number)}
 
 
 class IndexView(View):
+    """
+    Отображение стартовой страницы
+    """
     def get(self, request):
         return render(request, 'quiz/index.html')
 
 
 class QuizView(View):
+    """
+    Отображение страницы с вопросом и вариантами ответа
+    """
     def get(self, request):
         num = request.GET.get("nextq")
-        print(num)
         if not num:
             num = 1
         else:

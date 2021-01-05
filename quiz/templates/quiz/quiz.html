@@ -8,10 +8,12 @@
 	<h3>{{ question.title }}</h3>
 	<h4>
 		Варианты ответа:<br>
-		{{ question.ans1 }}<br>
-		{{ question.ans2 }}<br>
-		{{ question.ans3 }}<br>
-		{{ question.ans4 }}<br>
+		<div id="ans_but">
+			<button><a>{{ question.ans1 }}</a></button><br>
+			<button><a>{{ question.ans2 }}</a></button><br>
+			<button><a>{{ question.ans3 }}</a></button><br>
+			<button><a>{{ question.ans4 }}</a></button><br>
+		</div>
 	</h4>
 </div><!-- Вопрос -->
 
@@ -23,5 +25,17 @@
   </button>
 
  </form>
-{% endblock %}
 
+{% include "quiz/answer.html" with your_answer=2 %}
+
+<script>
+    let content = document.getElementById("answer")
+    let show = document.getElementById("ans_but")
+
+    show.addEventListener("click", () => {
+        content.style.display = "block"
+    })
+
+</script>
+
+{% endblock %}

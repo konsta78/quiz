@@ -1,0 +1,10 @@
+
+<div id="answer" style="display:none;">
+	<p>Правильный ответ: {{ question.r_ans }}</p>
+	<p>Ваш ответ: {{ your_answer }}</p>
+	{% if question.r_ans == your_answer %}
+		<p>Правильно!</p>
+	{% else %}
+		<p>Неправильно!</p>
+	{% endif %}
+</div>
