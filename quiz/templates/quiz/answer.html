@@ -1,10 +1,21 @@
 
-<div id="answer" style="display:none;">
-	<p>Правильный ответ: {{ question.r_ans }}</p>
-	<p>Ваш ответ: {{ your_answer }}</p>
-	{% if question.r_ans == your_answer %}
-		<p>Правильно!</p>
-	{% else %}
-		<p>Неправильно!</p>
-	{% endif %}
+<div>
+	<p>
+		Вопрос № {{ question.number }}
+	</p>
+	<p>
+		Выбран вариант ответа: {{ answer.answer }}
+	</p>
+	<p>
+		Правильный ответ: {{ question.r_ans }}
+	</p>
+
+	<form method="get">
+	  <button
+		type="submit"
+		value="{{ question.number }}"
+		name="question">Далее
+	  </button>
+ 	</form>
+
 </div>

@@ -6,13 +6,6 @@ from .models import Question
 num_of_questions = {'all_questions': len(Question.objects.all()) - 1}
 
 
-def set_context(number):
-    """
-    Выбор вопроса по ключю (primary key)
-    """
-    return {'question': Question.objects.get(pk=number)}
-
-
 class IndexView(View):
     """
     Отображение стартовой страницы
@@ -25,8 +18,8 @@ class QuizView(View):
     """
     Отображение страницы с вопросом и вариантами ответа
     """
-    def get(self, request):
-        num = request.GET.get("nextq")
+    def check_num_question(self, request, template, **answer):
+        num = request.GET.get("question")
         if not num:
             num = 1
         else:
@@ -34,8 +27,15 @@ class QuizView(View):
             if num > num_of_questions["all_questions"]:
                 return render(request, 'quiz/index.html')
 
-        return render(request, 'quiz/quiz.html', set_context(num))
+        context = {'question': Question.objects.get(pk=num), 'answer': answer}
+        return render(request, template, context)
 
+    def get(self, request):
+        num = self.check_num_question(request, 'quiz/quiz.html')
+        return num
 
-
+    def post(self, request):
+        answer = request.POST.get('ans_but')
+        num = self.check_num_question(request, 'quiz/answer.html', answer=answer)
+        return num
 

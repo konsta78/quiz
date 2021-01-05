@@ -4,16 +4,18 @@
 {% block content %}
 
 <div>
+
 	<h3>Вопрос №{{ question.number }}</h3>
 	<h3>{{ question.title }}</h3>
 	<h4>
 		Варианты ответа:<br>
-		<div id="ans_but">
-			<button><a>{{ question.ans1 }}</a></button><br>
-			<button><a>{{ question.ans2 }}</a></button><br>
-			<button><a>{{ question.ans3 }}</a></button><br>
-			<button><a>{{ question.ans4 }}</a></button><br>
-		</div>
+		<form method="post">
+			{% csrf_token %}
+			<button name="ans_but" value="1">{{ question.ans1 }}</button><br>
+			<button name="ans_but" value="2">{{ question.ans2 }}</button><br>
+			<button name="ans_but" value="3">{{ question.ans3 }}</button><br>
+			<button name="ans_but" value="4">{{ question.ans4 }}</button><br>
+		</form>
 	</h4>
 </div><!-- Вопрос -->
 
@@ -21,21 +23,9 @@
   <button
     type="submit"
     value="{{ question.number }}"
-    name="nextq">Далее
+    name="question">Далее
   </button>
 
  </form>
-
-{% include "quiz/answer.html" with your_answer=2 %}
-
-<script>
-    let content = document.getElementById("answer")
-    let show = document.getElementById("ans_but")
-
-    show.addEventListener("click", () => {
-        content.style.display = "block"
-    })
-
-</script>
 
 {% endblock %}
