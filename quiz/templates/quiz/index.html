@@ -3,16 +3,45 @@
 
 {% block content %}
 
+<style>
+
+ .divnew {
+  white-space: normal;
+	 line-height: 1.5;
+ }
+
+</style>
+
 <div>
-	<p class="divnew">
-		21 января 2021 года петербургскому Метрострою исполняется 80 лет.<br>
-		Ровно столько же лет и ленинградскому-петербургскому метростроению,
-		ведь все эти годы за строительство метро отвечала одна организация – ОАО «Метрострой».<br>
-		Тест рассчитан на широкую аудиторию и будет интересен как специалистам, так и тем,
-		кто просто хочет узнать для себя что-то новое из истории нашего города и истории строительства метро.
-	</p>
+	<section class="c-layout-revo-slider c-layout-revo-slider-4">
+		<div class="tp-banner">
+			<ul>
+				<li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
+					<img alt="" src="{% static 'quiz/images/index.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+					<div class="caption customin customout tp-resizeme" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-customin="x:0;y:0;z:0;rotationX:0.5;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-easing="Back.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
+						<h3 class="c-block-bordered c-font-48 c-font-bold c-font-center c-font-uppercase c-font-green-1 c-block">
+						ИСТОРИЯ ПЕТЕРБУРГСКОГО МЕТРОСТРОЯ<br>
+						<div class="c-font-20 c-font-lowercase c-font-thin">
+
+							<p class="divnew c-font-white">
+							21 января 2021 года петербургскому Метрострою исполняется 80 лет.<br>
+								Ровно столько же лет и ленинградскому-петербургскому метростроению,
+								ведь все эти годы за строительство метро отвечала одна организация – ОАО «Метрострой».<br>
+								Тест рассчитан на широкую аудиторию и будет интересен как специалистам, так и тем,
+							кто просто хочет узнать для себя что-то новое из истории нашего города и истории строительства метро.
+							</p></div>
+						</h3>
+					</div>
+					<div class="caption lft tp-resizeme " data-x="center" data-y="center" data-voffset="110" data-speed="900" data-start="2000" data-easing="easeOutExpo">
+						<div>
+							<a href="{% url 'quiz' %}" class="btn btn-xlg c-btn-green-1 c-font-uppercase c-font-bold c-btn-border-1x">Начать</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
 </div>
 
-<a href="{% url 'quiz' %}">Начать</a>
-
 {% endblock %}
+

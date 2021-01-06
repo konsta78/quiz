@@ -1,19 +1,81 @@
 {% load static %}
 <!DOCTYPE html>
 
-<head>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
 
+<head>
+<meta charset="utf-8"/>
 <title>Санкт-Петербургскому Метрострою 80 лет!</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all' rel='stylesheet' type='text/css'>
+<link href="{% static 'quiz/assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+
+<link href="{% static 'quiz/assets/plugins/revo-slider/css/settings.css' %}" rel="stylesheet" type="text/css"/>
+
+<link href="{% static 'quiz/assets/base/css/plugins.css' %}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'quiz/assets/base/css/components.css' %}" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="{% static 'quiz/assets/base/css/themes/default.css' %}" rel="stylesheet" id="style_theme" type="text/css"/> <!-- кнопка "начать"-->
+<link href="{% static 'quiz/assets/base/css/custom.css' %}" rel="stylesheet" type="text/css"/>
 
 
 </head>
 
 <body>
 
+
 {% block content %}
 
 {% endblock %}
 
 
+<script src="{% static 'quiz/assets/plugins/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'quiz/assets/plugins/bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+
+<script src="{% static 'quiz/assets/plugins/revo-slider/js/jquery.themepunch.tools.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'quiz/assets/plugins/revo-slider/js/jquery.themepunch.revolution.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'quiz/assets/plugins/counterup/jquery.counterup.min.js' %}" type="text/javascript"></script>
+
+
+<script src="{% static 'quiz/assets/base/js/app.js' %}" type="text/javascript"></script>
+<script>
+	$(document).ready(function() {
+		App.init(); // init core
+
+		// init main slider
+		var slider = $('.c-layout-revo-slider .tp-banner');
+	    var cont = $('.c-layout-revo-slider .tp-banner-container');
+	    var api = slider.show().revolution({
+	        delay: 15000,
+	        startwidth:1170,
+	        startheight: (App.getViewPort().width < App.getBreakpoint('md') ? 1024 : 620),
+	        navigationType: "hide",
+	        navigationArrows: "solo",
+	        touchenabled: "off",
+	        onHoverStop: "on",
+	        keyboardNavigation: "off",
+	        navigationStyle: "circle",
+	        navigationHAlign: "center",
+	        navigationVAlign: "center",
+	        fullScreenAlignForce:"off",
+	        shadow: 0,
+	        fullWidth: "on",
+	        fullScreen: "off",
+	        spinner: "spinner2",
+	        forceFullWidth: "on",
+	        hideTimerBar:"on",
+	        hideThumbsOnMobile: "on",
+	        hideNavDelayOnMobile: 1500,
+	        hideBulletsOnMobile: "on",
+	        hideArrowsOnMobile: "on",
+	        hideThumbsUnderResolution: 0,
+	        videoJsPath: "rs-plugin/videojs/",
+	    });
+	});
+	</script>
 </body>
 </html>
