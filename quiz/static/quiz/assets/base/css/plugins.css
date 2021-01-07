@@ -227,6 +227,9 @@ label.control-label {
 .btn.btn-xlg {
   padding: 16px 44px 14px 44px;
 }
+.btn.btn-xxlg {
+  padding: 24px 44px 24px 44px;
+}
 
 .btn.c-btn-border-2x {
   border-width: 2px;
@@ -247,6 +250,9 @@ label.control-label {
 .btn.c-btn-border-2x.btn-xlg {
   padding: 16px 44px 14px 44px;
 }
+.btn.c-btn-border-2x.btn-xxlg {
+  padding: 24px 44px 24px 44px;
+}
 .btn.c-btn-border-2x.c-btn-uppercase {
   padding: 6px 20px 4px 20px;
 }
@@ -264,6 +270,9 @@ label.control-label {
 }
 .btn.c-btn-border-2x.c-btn-uppercase.btn-xlg {
   padding: 19px 44px 15px 44px;
+}
+.btn.c-btn-border-2x.c-btn-uppercase.btn-xxlg {
+  padding: 24px 44px 24px 44px;
 }
 
 .btn.c-btn-border-1x {
@@ -348,6 +357,11 @@ label.control-label {
   font-size: 18px;
   padding: 20px 44px 15px 44px;
 }
+.c-btn-uppercase.btn-xxlg {
+  font-size: 18px;
+  padding: 24px 44px 24px 44px;
+}
+
 .c-btn-uppercase.btn-sm {
   padding: 6px 18px 4px 18px;
 }

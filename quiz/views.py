@@ -3,7 +3,7 @@ from django.views import View
 from .models import Question
 
 # кол-во вопросов
-num_of_questions = {'all_questions': len(Question.objects.all()) - 1}
+num_of_questions = {'all_questions': len(Question.objects.all())}
 
 
 class IndexView(View):
