@@ -1433,19 +1433,19 @@ label.control-label {
 .c-btn-grey {
   border-color: #eeeeee;
   border-width: 1px;
-  color: #6e6e6e;
+  color: #2f353b;
   background: #eeeeee;
   border-color: #eeeeee;
 }
 .c-btn-grey.btn-no-focus:focus, .c-btn-grey.btn-no-focus.focus {
-  color: #6e6e6e;
+  color: #2f353b;
   background: #eeeeee;
   border-color: #eeeeee;
 }
 .c-btn-grey.btn-no-focus:hover, .c-btn-grey:hover, .c-btn-grey.btn-no-focus:active, .c-btn-grey:active, .c-btn-grey.active, .open > .c-btn-grey.dropdown-toggle {
-  color: #6e6e6e;
-  background: #dadada;
-  border-color: #dadada;
+  color: #2f353b;
+  background: #5dc09c;
+  border-color: #5dc09c;
 }
 .c-btn-grey:active, .c-btn-grey.active, .open > .c-btn-grey.dropdown-toggle {
   background-image: none;
@@ -4493,7 +4493,8 @@ label.control-label {
 }
 
 .tp-banner-container {
-  position: relative;
+  position: relativ
+;
 }
 .tp-banner-container.tp-fullscreen {
   height: 1100px;

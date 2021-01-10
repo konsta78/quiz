@@ -39,3 +39,4 @@ class QuizView(View):
         num = self.check_num_question(request, 'quiz/answer.html', answer=answer)
         return num
 
+

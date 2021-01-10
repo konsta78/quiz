@@ -1,0 +1,20 @@
+.tablecell{
+    width: 100%;
+}
+.tablecell-80{
+    width: 80%;
+}
+.cellspacing{
+	border-collapse: separate;
+	border-spacing: 30px 30px;
+	width: 100%;
+}
+.divnew {
+  	white-space: normal;
+	line-height: 1.5;
+ }
+
+.divnew2 {
+  	white-space: normal;
+	line-height: 2;
+ }
