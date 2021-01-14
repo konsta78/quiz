@@ -8,35 +8,23 @@
 			<ul>
 				<li data-transition="fade" data-slotamount="1" data-masterspeed="500">
 					<img alt="" src="{% static 'quiz/images/index.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-					<div class="caption customin customout tp-resizeme" data-x="center" data-y="100" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-customin="x:0;y:0;z:-20;rotationX:0.5;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-easing="Back.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
+					<div class="caption customin customout" data-x="center" data-y="100" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-customin="x:0;y:0;z:-20;rotationX:0.5;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-easing="Back.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
 						<div class="c-content-title-1 divnew2">
-							<h3 class="c-center c-font-uppercase c-font-bold c-font-green-2">Вопрос № {{ question.number }}</h3>
-							<h3 class="c-center c-font-white" >{{ question.title }}</h3>
+							<h3 class="c-center c-font-uppercase c-font-bold c-font-ms-green">Вопрос № {{ question.number }}</h3>
+							<h3 class="c-center c-font-white " >
+								<p class="divnew">{{ question.title }}</p>
+							</h3>
 						</div>
 						<form method="post">
 						{% csrf_token %}
 							<table class="cellspacing">
 								<tr>
-									<td width="50%"><button name="ans_but" value="1" class="c-font-24 btn btn-xlg c-btn-grey tablecell">{{ question.ans1 }}</button></td>
-									<td width="50%"><button name="ans_but" value="2" class="c-font-24 btn btn-xlg c-btn-grey tablecell">{{ question.ans2 }}</button></td>
+									<td width="50%" align="right"><button name="ans_but" value="1" class="c-font-24 btn btn-xlg c-btn-ms-green butwidth">{{ question.ans1 }}</button></td>
+									<td width="50%" align="left"><button name="ans_but" value="2" class="c-font-24 btn btn-xlg c-btn-ms-green butwidth">{{ question.ans2 }}</button></td>
 								</tr>
 								<tr>
-									<td><button name="ans_but" value="3" class="c-font-24 btn btn-xlg c-btn-grey tablecell">{{ question.ans3 }}</button></td>
-									<td><button name="ans_but" value="4" class="c-font-24 btn btn-xlg c-btn-grey tablecell">{{ question.ans4 }}</button></td>
-								</tr>
-							</table>
-						</form>
-						<form method="get">
-							<table class="cellspacing">
-								<tr>
-									<td align="center">
-										<button
-											class="c-font-24 btn btn-xlg c-btn-green-2 c-btn-border-1x c-font-uppercase"
-											type="submit"
-											value="{{ question.number }}"
-											name="question">Следующий вопрос
-										  </button>
-									</td>
+									<td align="right"><button name="ans_but" value="3" class="c-font-24 btn btn-xlg c-btn-ms-green butwidth">{{ question.ans3 }}</button></td>
+									<td align="left"><button name="ans_but" value="4" class="c-font-24 btn btn-xlg c-btn-ms-green butwidth">{{ question.ans4 }}</button></td>
 								</tr>
 							</table>
 						</form>
