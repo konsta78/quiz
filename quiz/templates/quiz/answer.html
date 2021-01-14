@@ -7,7 +7,7 @@
 	<div class="tp-banner">
 		<ul>
 			<li data-transition="fade" data-slotamount="1" data-masterspeed="500">
-				<img alt="" src="{% static 'quiz/images/index.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+				<img alt="" src="{% static 'quiz/images/index.jpg' %}" >
 				<div class="caption customin customout" data-x="center" data-y="50" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-customin="x:0;y:0;z:-20;rotationX:0.5;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-easing="Back.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
 					<div class="c-content-title-1 divnew">
 						{% if question.r_ans == answer.answer %}
@@ -18,9 +18,18 @@
 								Неверно!</h3>
 							<h3 class="c-center c-font-ms-green c-font-bold">Правильный ответ:</h3>
 						{% endif %}
-						<h3 class="c-center c-font-white" >
-							{{ question.text_answer|linebreaks }}
-						</h3>
+						<div class="c-font-24 c-font-white c-font-sbold" >
+							<table class="cellspacing">
+								<tr>
+									<td align="right" class="trans">
+										<img alt="" src="{% get_static_prefix %}quiz/images/{{ question.number }}.jpg">
+									</td>
+									<td align="left" valign="top" class="bgtrans">
+										{{ question.text_answer|safe }}
+									</td>
+								</tr>
+							</table>
+						</div>
 					</div>
 
 					<form method="get">
