@@ -70,8 +70,9 @@
 	opacity: 1; /* Полупрозрачность таблицы */
     	filter: alpha(Opacity=100); /* Для IE */
    	}
+
 .bgtrans {
 	border: 1px solid #333; /* Граница вокруг ячеек */
 	padding: 5px;
-	background-color:rgba(0, 0, 0, 0.3);
+	background-color:rgba(0, 0, 0, 0.4);
 	}
