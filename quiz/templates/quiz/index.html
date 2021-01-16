@@ -2,35 +2,53 @@
 {% load static %}
 
 {% block content %}
+<div class="section6 revealator-zoomin revealator-delay1 revealator-once">
+	<h4 class="c-block-bordered c-font-40 c-font-bold c-font-center c-font-uppercase c-font-ms-green c-block">
+		ИСТОРИЯ ПЕТЕРБУРГСКОГО МЕТРОСТРОЯ<br>
+		<div class="c-font-24 c-font-lowercase c-font-thin">
+			<p class="divnew2 c-font-white bgtrans">
+				21 января 2021 года петербургскому Метрострою исполняется 80 лет.<br>
+				Ровно столько же лет и ленинградскому-петербургскому метростроению,
+				ведь все эти годы за строительство метро отвечала одна организация – ОАО «Метрострой».<br>
+				<br>
+				Тест рассчитан на широкую аудиторию и будет интересен как специалистам, так и тем,
+				кто просто хочет узнать для себя что-то новое из истории нашего города и истории строительства метро.
+			</p>
+		</div>
 
-<section class="c-layout-revo-slider c-layout-revo-slider-4">
-	<div class="tp-banner">
-		<ul>
-			<li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
-				<img alt="" src="{% static 'quiz/images/index.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-				<div class="caption customin customout tp-resizeme" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-customin="x:0;y:0;z:0;rotationX:0.5;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-easing="Back.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
-					<h3 class="c-block-bordered c-font-48 c-font-bold c-font-center c-font-uppercase c-font-ms-green c-block">
-						ИСТОРИЯ ПЕТЕРБУРГСКОГО МЕТРОСТРОЯ<br>
-						<div class="c-font-24 c-font-lowercase c-font-thin">
-							<br>
-							<p class="divnew2 c-font-white bgtrans">
+		<a href="{% url 'quiz' %}" class="c-font-24 btn btn-xlg c-btn-ms-green c-font-uppercase c-font-bold">Пройти тест</a>
+	</h4>
+</div>
 
-								21 января 2021 года петербургскому Метрострою исполняется 80 лет.<br>
-								Ровно столько же лет и ленинградскому-петербургскому метростроению,
-								ведь все эти годы за строительство метро отвечала одна организация – ОАО «Метрострой».<br>
-								<br>
-								Тест рассчитан на широкую аудиторию и будет интересен как специалистам, так и тем,
-								кто просто хочет узнать для себя что-то новое из истории нашего города и истории строительства метро.
-							</p>
-						</div>
 
-						<a href="{% url 'quiz' %}" class="c-font-24 btn btn-xlg c-btn-ms-green c-font-uppercase c-font-bold">Пройти тест</a>
-					</h3>
-				</div>
-			</li>
-		</ul>
-	</div>
-</section>
+<!--<section class="c-layout-revo-slider c-layout-revo-slider-4">-->
+<!--	<div class="tp-banner">-->
+<!--		<ul>-->
+<!--			<li data-transition="fade" data-slotamount="1" data-masterspeed="1000">-->
+<!--				<img alt="" src="{% static 'quiz/images/index.jpg' %}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">-->
+<!--				<div class="caption customin customout tp-resizeme" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-customin="x:0;y:0;z:0;rotationX:0.5;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-easing="Back.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">-->
+<!--					<h3 class="c-block-bordered c-font-48 c-font-bold c-font-center c-font-uppercase c-font-ms-green c-block">-->
+<!--						ИСТОРИЯ ПЕТЕРБУРГСКОГО МЕТРОСТРОЯ<br>-->
+<!--						<div class="c-font-24 c-font-lowercase c-font-thin">-->
+<!--							<br>-->
+<!--							<p class="divnew2 c-font-white bgtrans">-->
+
+<!--								21 января 2021 года петербургскому Метрострою исполняется 80 лет.<br>-->
+<!--								Ровно столько же лет и ленинградскому-петербургскому метростроению,-->
+<!--								ведь все эти годы за строительство метро отвечала одна организация – ОАО «Метрострой».<br>-->
+<!--								<br>-->
+<!--								Тест рассчитан на широкую аудиторию и будет интересен как специалистам, так и тем,-->
+<!--								кто просто хочет узнать для себя что-то новое из истории нашего города и истории строительства метро.-->
+<!--							</p>-->
+<!--						</div>-->
+
+<!--						<a href="{% url 'quiz' %}" class="c-font-24 btn btn-xlg c-btn-ms-green c-font-uppercase c-font-bold">Пройти тест</a>-->
+<!--					</h3>-->
+<!--				</div>-->
+<!--			</li>-->
+<!--		</ul>-->
+<!--	</div>-->
+<!--</section>-->
 
 {% endblock %}
 
