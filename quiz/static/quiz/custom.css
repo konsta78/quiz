@@ -65,10 +65,10 @@
 
 .trans {
 	background: white; /* Цвет фона */
-    	border: 1px solid #333; /* Граница вокруг ячеек */
+    border: 1px solid #333; /* Граница вокруг ячеек */
 	padding: 5px;
 	opacity: 1; /* Полупрозрачность таблицы */
-    	filter: alpha(Opacity=100); /* Для IE */
+    filter: alpha(Opacity=100); /* Для IE */
    	}
 
 .bgtrans {
@@ -76,3 +76,14 @@
 	padding: 5px;
 	background-color:rgba(0, 0, 0, 0.4);
 	}
+
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.ans_img {
+    width: 337px;
+   	height: auto;
+}
