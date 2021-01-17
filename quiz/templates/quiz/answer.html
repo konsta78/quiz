@@ -32,7 +32,8 @@
 			</table>
 		</div>
 
-	<form method="get">
+	<form method="post">
+		{% csrf_token %}
 		<table class="cellspacing">
 			<tr>
 				<td align="center">

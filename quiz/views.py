@@ -10,10 +10,11 @@ class IndexView(View):
     """
     Отображение стартовой страницы
     """
+    list_answers = []
+    user_right_answers = 0
 
     def get(self, request):
-        IndexView.user_r_a = 0
-        IndexView.flag = 1
+        IndexView.list_answers = []
         return render(request, 'quiz/index.html')
 
 
@@ -23,7 +24,7 @@ class QuizView(View):
     """
 
     def check_num_question(self, request):
-        num = request.GET.get("question")
+        num = request.POST.get("question")
         if not num:
             num = 1
         else:
@@ -32,35 +33,34 @@ class QuizView(View):
         return num
 
     def get(self, request):
+        context = {'question': Question.objects.get(pk=1)}
+        return render(request, 'quiz/quiz.html', context)
 
-        IndexView.flag = 1
-        num = self.check_num_question(request)
+    def post(self, request):
+        num = 1
+        if request.POST.get("question"):
+            num = self.check_num_question(request)
+            print("POST num: ", num)
+        print("Нажали на ответ: ", request.POST.get('ans_but'))
+        if request.POST.get('ans_but'):
+            answer = request.POST.get('ans_but')
+            r = request.POST.get('right_answer')
+            if num in [5, 8, 9, 10, 12, 13, 14, 15, 16, 18, 19, 20]:
+                template = 'quiz/answer_w.html'
+            else:
+                template = 'quiz/answer.html'
+
+            context = {'question': Question.objects.get(pk=num), 'answer': answer}
+            return render(request, template, context)
+
         if num > num_of_questions["all_questions"]:
             return redirect('results')
 
         context = {'question': Question.objects.get(pk=num)}
         return render(request, 'quiz/quiz.html', context)
 
-    def post(self, request):
-        answer = request.POST.get('ans_but')
-        r = request.POST.get('right_answer')
-
-        if answer == r and IndexView.flag == 1:
-            IndexView.user_r_a += 1
-            IndexView.flag = 0
-
-        num = self.check_num_question(request)
-        if num in [5, 8, 9, 10, 12, 13, 14, 15, 16, 18, 19, 20]:
-            template = 'quiz/answer_w.html'
-        else:
-            template = 'quiz/answer.html'
-
-        context = {'question': Question.objects.get(pk=num), 'answer': answer}
-        return render(request, template, context)
-
 
 class ResultsView(View):
     def get(self, request):
-        context = {'user_results': IndexView.user_r_a}
-        IndexView.user_r_a = 0
-        return render(request, 'quiz/results.html', context)
+
+        return render(request, 'quiz/results.html')
