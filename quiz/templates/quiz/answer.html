@@ -17,7 +17,7 @@
 			<table class="cellspacing">
 				<tr>
 					<td align="right" class="trans">
-						<img alt="" src="{% get_static_prefix %}quiz/images/{{ question.number }}.jpg" class="ans_img">
+						<img alt="" src="{% get_static_prefix %}quiz/images/{{ question.number }}.jpg" {{ img_style }} = '454'>
 					</td>
 					<td align="left" valign="top" class="bgtrans">
 						{{ question.text_answer|safe }}
@@ -35,7 +35,11 @@
 							type="submit"
 							value="{{ question.number }}"
 							name="question">
-						<span class="c-font-20 c-font-bold">Следующий вопрос</span>
+						{% if question.number < 5 %}
+							<span class="c-font-20 c-font-bold">Следующий вопрос</span>
+						{% else %}
+							<span class="c-font-20 c-font-bold">Завершить тест</span>
+						{% endif %}
 					</button>
 				</td>
 			</tr>

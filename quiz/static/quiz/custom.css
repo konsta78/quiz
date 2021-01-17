@@ -9,6 +9,11 @@
 	border-spacing: 30px 30px;
 	width: 100%;
 }
+.cellspacing-0{
+	border-collapse: separate;
+	border-spacing: 0px 0px;
+	width: 100%;
+}
 .divnew {
   	white-space: normal;
 	line-height: 1.5;
@@ -76,14 +81,14 @@
 	padding: 5px;
 	background-color:rgba(0, 0, 0, 0.4);
 	}
+.bgtrans-40 {
+	border: 0px solid #333; /* Граница вокруг ячеек */
+	padding: 0px;
+	background-color:rgba(0, 0, 0, 0.4);
+	}
 
 body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-}
-
-.ans_img {
-    width: 337px;
-   	height: auto;
 }

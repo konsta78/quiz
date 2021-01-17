@@ -1,0 +1,32 @@
+{% extends "quiz/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="section6 revealator-zoomin revealator-delay1 revealator-once">
+	<h3 class="c-center c-font-uppercase c-font-bold c-font-ms-green">
+		Тест завершен!
+	</h3>
+	<h3 class="c-center c-font-uppercase c-font-bold c-font-white">
+			Ваш результат:
+		<h3 class="c-center c-font-bold c-font-ms-green">
+			<span class="c-font-36">{{ user_results }}</span>
+			<span class="c-font-white">
+		{% if user_results == 1 %}
+				правильный ответ
+		{% elif user_results == 2 or user_results == 3 or user_results == 4 %}
+				правильных ответа
+		{% else %}
+				правильных ответов
+		{% endif %}
+				из 20
+			</span>
+		</h3>
+	</h3>
+	<h3>
+	<a href="{% url 'home' %}" class="btn btn-xlg c-btn-ms-green c-font-uppercase c-font-bold">
+			<span class="c-font-20">Пройти тест еще раз</span></a>
+	</h3>
+</div>
+
+{% endblock %}
