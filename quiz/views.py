@@ -10,10 +10,10 @@ class IndexView(View):
     """
     Отображение стартовой страницы
     """
-    user_r_a = 0
-    flag = 1
 
     def get(self, request):
+        IndexView.user_r_a = 0
+        IndexView.flag = 1
         return render(request, 'quiz/index.html')
 
 
@@ -22,37 +22,41 @@ class QuizView(View):
     Отображение страницы с вопросом и вариантами ответа
     """
 
-    def check_num_question(self, request, template, **answer):
+    def check_num_question(self, request):
         num = request.GET.get("question")
-        img_style = 'height'
         if not num:
             num = 1
         else:
             num = int(num) + 1
-            if num > num_of_questions["all_questions"]:
-                return redirect('results')
-            elif num in [5, 6]:
-                img_style = 'width'
 
-        context = {'question': Question.objects.get(pk=num), 'answer': answer, 'img_style': img_style}
-        return render(request, template, context)
+        return num
 
     def get(self, request):
+
         IndexView.flag = 1
-        num = self.check_num_question(request, 'quiz/quiz.html')
-        return num
+        num = self.check_num_question(request)
+        if num > num_of_questions["all_questions"]:
+            return redirect('results')
+
+        context = {'question': Question.objects.get(pk=num)}
+        return render(request, 'quiz/quiz.html', context)
 
     def post(self, request):
-        if request.method == 'POST':
-            answer = request.POST.get('ans_but')
-            r = request.POST.get('right_answer')
+        answer = request.POST.get('ans_but')
+        r = request.POST.get('right_answer')
 
-            if answer == r and IndexView.flag == 1:
-                IndexView.user_r_a += 1
-                IndexView.flag = 0
+        if answer == r and IndexView.flag == 1:
+            IndexView.user_r_a += 1
+            IndexView.flag = 0
 
-        num = self.check_num_question(request, 'quiz/answer.html', answer=answer)
-        return num
+        num = self.check_num_question(request)
+        if num in [5, 8, 9, 10, 12, 13, 14, 15, 16, 18, 19, 20]:
+            template = 'quiz/answer_w.html'
+        else:
+            template = 'quiz/answer.html'
+
+        context = {'question': Question.objects.get(pk=num), 'answer': answer}
+        return render(request, template, context)
 
 
 class ResultsView(View):

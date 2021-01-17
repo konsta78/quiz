@@ -6,7 +6,7 @@
 <div class="section6 revealator-zoomin revealator-delay1 revealator-once">
 	<h3 class="c-center c-font-uppercase c-font-bold c-font-ms-green">Вопрос № {{ question.number }}</h3>
 	<h3 class="c-center c-font-white">
-		<p class="divnew ">{{ question.title }}</p>
+		<div class="divnew bgtrans">{{ question.title|safe }}</div>
 	</h3>
 
 	<form method="post">
@@ -18,24 +18,24 @@
 			<tr>
 				<td width="50%" align="right">
 					<button name="ans_but" value="1" class="btn btn-xlg c-btn-ms-green butwidth">
-						<span class="c-font-20 c-font-bold">{{ question.ans1 }}</span>
+						<span class="c-font-20 c-font-bold">{{ question.ans1|safe }}</span>
 					</button>
 				</td>
 				<td width="50%" align="left">
 					<button name="ans_but" value="2" class="btn btn-xlg c-btn-ms-green butwidth">
-						<span class="c-font-20 c-font-bold">{{ question.ans2 }}</span>
+						<span class="c-font-20 c-font-bold">{{ question.ans2|safe }}</span>
 					</button>
 				</td>
 			</tr>
 			<tr>
 				<td align="right">
 					<button name="ans_but" value="3" class="btn btn-xlg c-btn-ms-green butwidth">
-						<span class="c-font-20 c-font-bold">{{ question.ans3 }}</span>
+						<span class="c-font-20 c-font-bold">{{ question.ans3|safe }}</span>
 					</button>
 				</td>
 				<td align="left">
 					<button name="ans_but" value="4" class="btn btn-xlg c-btn-ms-green butwidth">
-						<span class="c-font-20 c-font-bold">{{ question.ans4 }}</span>
+						<span class="c-font-20 c-font-bold">{{ question.ans4|safe }}</span>
 					</button>
 				</td>
 			</tr>

@@ -276,7 +276,7 @@ label.control-label {
 }
 
 .btn.c-btn-border-1x {
-  border-width: 1px;
+  border-width: 0px;
 }
 
 .btn + .btn {

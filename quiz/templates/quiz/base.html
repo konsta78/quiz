@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Метрострою 80!</title>
+	<title>ОАО "Метрострой"-80 лет!</title>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="{% static 'quiz/style.css' %}">
 	<link rel="stylesheet" href="{% static 'quiz/fm.revealator.jquery.css' %}">
@@ -19,6 +19,15 @@
 </head>
 
 <body background="{% static 'quiz/images/index.jpg' %}">
+
+<div align="right" style="margin-right: 20px; margin-top: 20px">
+	<a alt="На главную" href="{% url 'home' %}">
+	<img
+			src="{% static 'quiz/images/home.png' %}"
+			onmouseover="this.src='{% static 'quiz/images/home2.png' %}'"
+			onmouseout="this.src='{% static 'quiz/images/home.png' %}'">
+	</a>
+</div>
 
 {% block content %}
 

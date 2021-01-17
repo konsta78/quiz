@@ -11,6 +11,7 @@
 </style>
 
 <div class="section6 revealator-zoomin revealator-delay1 revealator-once">
+
 	{% if question.r_ans == answer %}
 		<h3 class="c-center c-font-uppercase c-font-bold c-font-ms-green">
 			Верно!</h3>
@@ -19,12 +20,14 @@
 			Неверно!</h3>
 		<h3 class="c-center c-font-ms-green c-font-bold">Правильный ответ:</h3>
 	{% endif %}
-		<div class="c-font-20 c-font-white c-font-sbold" >
-			<table class="cellspacing">
+		<div class="c-font-20 c-font-white c-font-sbold" align="center">
+			<table class="cellspacing-0">
 				<tr>
-					<td align="right" class="trans">
-						<img alt="" src="{% get_static_prefix %}quiz/images/{{ question.number }}.jpg" height="454">
+					<td align="center" class="trans">
+						<img alt="" src="{% get_static_prefix %}quiz/images/{{ question.number }}.jpg">
 					</td>
+				</tr>
+				<tr>
 					<td align="left" valign="top" class="bgtrans">
 						{{ question.text_answer|safe }}
 					</td>
