@@ -2,9 +2,12 @@ from django.shortcuts import render, redirect
 from django.views import View
 from .models import Question
 
-# кол-во вопросов
-num_of_questions = {'all_questions': len(Question.objects.all())}
-
+RIGHT_ANSWERS = {
+    1: '1', 2: '2', 3: '1', 4: '3', 5: '2',
+    6: '3', 7: '4', 8: '2', 9: '4', 10: '2',
+    11: '3', 12: '2', 13: '1', 14: '4', 15: '3',
+    16: '2', 17: '4', 18: '1', 19: '3', 20: '4',
+}
 
 class IndexView(View):
     """
@@ -52,4 +55,9 @@ class QuizView(View):
 
 class ResultsView(View):
     def get(self, request):
-        return render(request, 'quiz/results.html')
+        user_right_answers = 0
+        for i in range(1, 21):
+            if IndexView.user_answers[i] == RIGHT_ANSWERS[i]:
+                user_right_answers += 1
+        context = {'user_results': user_right_answers}
+        return render(request, 'quiz/results.html', context)
