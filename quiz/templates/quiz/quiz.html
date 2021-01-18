@@ -12,7 +12,7 @@
 	<form method="post">
 		{% csrf_token %}
 
-		<input type="hidden" name="right_answer" value="{{ question.r_ans }}">
+		<input type="hidden" name="question" value="{{ question.number }}">
 
 		<table class="cellspacing">
 			<tr>

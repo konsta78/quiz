@@ -11,7 +11,6 @@
 </style>
 
 <div class="section6 revealator-zoomin revealator-delay1 revealator-once">
-
 	{% if question.r_ans == answer %}
 		<h3 class="c-center c-font-uppercase c-font-bold c-font-ms-green">
 			Верно!</h3>
@@ -35,7 +34,8 @@
 			</table>
 		</div>
 
-	<form method="get">
+	<form method="post">
+		{% csrf_token %}
 		<table class="cellspacing">
 			<tr>
 				<td align="center">
