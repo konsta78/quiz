@@ -14,6 +14,7 @@
 	border-spacing: 0px 0px;
 	width: 720px;
 }
+
 .divnew {
   	white-space: normal;
 	line-height: 1.5;
@@ -55,7 +56,7 @@
   border-width: 1px;
   color: #2f353b;
   background: #eeeeee;
-  border-color: #eeeeee;
+
 }
 .c-btn-ms-green.btn-no-focus:focus, .c-btn-ms-green.btn-no-focus.focus {
   color: #2f353b;
@@ -93,3 +94,10 @@ body {
   background-size: cover;
 }
 
+.footer {
+    text-align: center;
+    position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    width: 100%; /* Ширина слоя */
+   }
