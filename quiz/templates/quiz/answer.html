@@ -22,13 +22,15 @@
 		<div class="c-font-20 c-font-white c-font-sbold" >
 			<table class="cellspacing">
 				<tr>
-					<td align="right" class="trans">
-						<img alt="" src="{% get_static_prefix %}quiz/images/{{ question.number }}.jpg">
+					<td valign="top" class="">
+						<img alt="" src="{% get_static_prefix %}quiz/images/{{ question.number }}.jpg" height="100%">
 					</td>
-					<td align="left" valign="top" class="bgtrans">
+
+					<td align="left" valign="top" class="bgtrans" rowspan="2">
 						{{ question.text_answer|safe }}
 					</td>
 				</tr>
+
 			</table>
 		</div>
 
