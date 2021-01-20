@@ -9,11 +9,12 @@ RIGHT_ANSWERS = {
     16: '2', 17: '4', 18: '1', 19: '3', 20: '4',
 }
 
+
 class IndexView(View):
     """
     Отображение стартовой страницы
     """
-    user_answers = {}
+    users_answers = {}
 
     def get(self, request):
         return render(request, 'quiz/index.html')
@@ -25,17 +26,23 @@ class QuizView(View):
     """
 
     def get(self, request):
-        IndexView.user_answers = {}
+        token = request.headers['Cookie']
+        IndexView.users_answers[token] = {}
+        print("token -> ", token)
+
         context = {'question': Question.objects.get(pk=1)}
         return render(request, 'quiz/quiz.html', context)
 
     def post(self, request):
         num = int(request.POST.get("question"))
 
-        if request.POST.get('ans_but'):
+        if request.POST.get('ans_but'):  # end of test
             answer = request.POST.get('ans_but')
 
-            IndexView.user_answers[num] = answer
+            token = request.headers['Cookie']
+            print('user"s answers before -> ', IndexView.users_answers[token])
+            IndexView.users_answers[token][num] = answer
+            print('user"s answers after -> ', IndexView.users_answers[token])
 
             if num in [5, 8, 9, 10, 12, 13, 14, 15, 16, 18, 19, 20]:
                 template = 'quiz/answer_w.html'
@@ -55,9 +62,14 @@ class QuizView(View):
 
 class ResultsView(View):
     def get(self, request):
+
         user_right_answers = 0
+        token = request.headers['Cookie']
+        user_answers = IndexView.users_answers[token]
+
         for i in range(1, 21):
-            if IndexView.user_answers[i] == RIGHT_ANSWERS[i]:
+            if user_answers[i] == RIGHT_ANSWERS[i]:
                 user_right_answers += 1
+
         context = {'user_results': user_right_answers}
         return render(request, 'quiz/results.html', context)
