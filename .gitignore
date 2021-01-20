@@ -5,7 +5,6 @@ __pycache__/
 .idea
 *.zip
 *.json
-*.sqlite3
 *.env
 
 # C extensions
